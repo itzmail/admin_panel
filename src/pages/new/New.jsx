@@ -1,15 +1,16 @@
 import "./new.scss";
 import Sidebar from '../../components/sidebar/Sidebar';
 import Navbar from '../../components/navbar/Navbar';
+import DriveFolderUploadIcon from '@mui/icons-material/DriveFolderUpload';
 
-const New = () => {
+const New = ({inputs, title}) => {
   return (
     <div className="new">
       <Sidebar />
       <div className="newContainer">
         <Navbar />
         <div className="top">
-          <h1 className="title">Add New User</h1>
+          <h1 className="title">{title}</h1>
         </div>
         <div className="bottom">
           <div className="left">
@@ -18,35 +19,22 @@ const New = () => {
           <div className="right">
             <form>
               <div className="formInput">
-                <label>Username</label>
-                <input type="text" placeholder="itzmail" />
+                <label htmlFor="file">
+                  Image: <DriveFolderUploadIcon className="icon" />
+                </label>
+                <input type="file" id="file" style={{display: "none"}} />
               </div>
-              <div className="formInput">
-                <label>Name and surname</label>
-                <input type="text" placeholder="Ismail Alam" />
-              </div>
-              <div className="formInput">
-                <label>Email</label>
-                <input type="text" placeholder="itzmail@imaco.com" />
-              </div>
-              <div className="formInput">
-                <label>Phone</label>
-                <input type="text" placeholder="+62 1234 5678 9101" />
-              </div>
-              <div className="formInput">
-                <label>Password</label>
-                <input type="password" />
-              </div>
-              <div className="formInput">
-                <label>Address</label>
-                <input type="text" placeholder="Perumahan rumah-rumah Blok b 11 no 12" />
-              </div>
-              <div className="formInput">
-                <label>Country</label>
-                <input type="text" placeholder="INA" />
-              </div>
-              <button>Send</button>
+              {inputs.map((value, key) => {
+                return(
+                  <div className="formInput" key={key}>
+                    <label>{value.label}</label>
+                    <input type={value.type} placeholder={value.placeholder} />
+                  </div>
+                )
+              })}
+              
             </form>
+              <button>Send</button>
           </div>
         </div>
       </div>
