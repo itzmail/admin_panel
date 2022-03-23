@@ -13,4 +13,56 @@
             color: gray;
         }
     }
+
+    .navbar{
+        color: #999;
+        border-color: #333;
+
+        .search{
+            border-color: gray;
+        }
+    }
+
+    .sidebar{
+        color: #999;
+        border-color: #333;
+        background-color: #222;
+
+        .top{
+            .logo{
+                color: #999;
+            }
+        }
+
+        hr{
+            border-color: #333;
+        }
+
+        ul{
+            li{
+                &:hover{
+                    background-color: #999;
+                }
+                .icon{
+                    color: #999;
+                }
+            }
+        }
+    }
+
+    .datatable{
+        .datagrid{
+            color: gray;
+            border: none;
+
+            .viewButton,.deleteButton,.cellWithStatus{
+                color: gray;
+                border: none
+            }
+        }
+    }
+
+    input{
+        background-color: transparent;
+    }
 }
