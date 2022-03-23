@@ -1,58 +1,68 @@
 import "./table.scss";
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
 
 const TableTransaction = () => {
-    const rows = [
-        {
-            id: 1143155,
-            product: "Hp Omen 15",
-            img: "https://images.idgesg.net/images/article/2017/06/hp_omen_17-laptop_left_rearquarter_jun_2017-100725000-orig.jpg",
-            customer: "Steven Acep",
-            date: "1 Sya'ban",
-            amount: 785,
-            method: "Cash on Delivery",
-            status: "Approved"
-        },
-        {
-            id: 1143155,
-            product: "Playstation 5",
-            img: "https://cdn.pocket-lint.com/r/s/1200x630/assets/images/143354-games-feature-sony-playstation-5-release-date-rumours-and-everything-you-need-to-know-about-ps5-image1-cvz3adase9.jpg",
-            customer: "Cecep Sudrajat",
-            date: "1 Rajab",
-            amount: 785,
-            method: "Online Payments",
-            status: "Pending"
-        },
-        {
-            id: 1143155,
-            product: "Steam Deck",
-            img: "https://knowthisapp.com/wp-content/uploads/2021/08/everything-you-need-to-know-about-steam-deck.jpg",
-            customer: "Uus Dahlia",
-            date: "1 Rabbiul Awal",
-            amount: 785,
-            method: "Online Payments",
-            status: "Pending"
-        },
-        {
-            id: 1143155,
-            product: "Iphone 13 pro max",
-            img: "https://bgr.com/wp-content/uploads/2021/04/iphone-13-design-schematic-3d-leak-1.jpg",
-            customer: "Entin Ningsih",
-            date: "15 Syawal",
-            amount: 785,
-            method: "Cash",
-            status: "Approved"
-        },
-    ]
+  const rows = [
+    {
+      id: 1143155,
+      product: "Acer Nitro 5",
+      img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
+      customer: "John Smith",
+      date: "1 March",
+      amount: 785,
+      method: "Cash on Delivery",
+      status: "Approved",
+    },
+    {
+      id: 2235235,
+      product: "Playstation 5",
+      img: "https://m.media-amazon.com/images/I/31JaiPXYI8L._AC_UY327_FMwebp_QL65_.jpg",
+      customer: "Michael Doe",
+      date: "1 March",
+      amount: 900,
+      method: "Online Payment",
+      status: "Pending",
+    },
+    {
+      id: 2342353,
+      product: "Redragon S101",
+      img: "https://m.media-amazon.com/images/I/71kr3WAj1FL._AC_UY327_FMwebp_QL65_.jpg",
+      customer: "John Smith",
+      date: "1 March",
+      amount: 35,
+      method: "Cash on Delivery",
+      status: "Pending",
+    },
+    {
+      id: 2357741,
+      product: "Razer Blade 15",
+      img: "https://m.media-amazon.com/images/I/71wF7YDIQkL._AC_UY327_FMwebp_QL65_.jpg",
+      customer: "Jane Smith",
+      date: "1 March",
+      amount: 920,
+      method: "Online",
+      status: "Approved",
+    },
+    {
+      id: 2342355,
+      product: "ASUS ROG Strix",
+      img: "https://m.media-amazon.com/images/I/81hH5vK-MCL._AC_UY327_FMwebp_QL65_.jpg",
+      customer: "Harold Carol",
+      date: "1 March",
+      amount: 2000,
+      method: "Online",
+      status: "Pending",
+    },
+  ];
 
-    return(
-        <TableContainer component={Paper} className="table">
+  return (
+    <TableContainer component={Paper} className="table">
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -68,11 +78,13 @@ const TableTransaction = () => {
         <TableBody>
           {rows.map((row) => (
             <TableRow key={row.id}>
-              <TableCell>{row.id}</TableCell>
-              <div className="cellWrapper">
-                <img src={row.img} alt="" className="image"/>
-              <TableCell className="tableCell">{row.product}</TableCell>
-              </div>
+              <TableCell className="tableCell">{row.id}</TableCell>
+              <TableCell className="tableCell">
+                <div className="cellWrapper">
+                  <img src={row.img} alt="" className="image" />
+                  {row.product}
+                </div>
+              </TableCell>
               <TableCell className="tableCell">{row.customer}</TableCell>
               <TableCell className="tableCell">{row.date}</TableCell>
               <TableCell className="tableCell">{row.amount}</TableCell>
@@ -85,7 +97,7 @@ const TableTransaction = () => {
         </TableBody>
       </Table>
     </TableContainer>
-    )
-}
+  );
+};
 
 export default TableTransaction;
